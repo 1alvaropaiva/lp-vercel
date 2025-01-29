@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Portfólio - Desenvolvedor PHP</title>
+    <title>Alvaro - Desenvolvedor</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="shortcut icon" href="imagens/favicon.png" type="image/x-icon">
 </head>
 <body>
     <header>
         <div class="container">
-            <h1>Olá, eu sou Alvaro!</h1>
-            <p>Estudante de Tecnologia em busca de um estágio.</p>
+            <h1>Olá, meu nome é Alvaro</h1>
+            <p>Desenvolvedor PHP em busca de um estágio.</p>
+            <a href="#contato" class="btn">Entre em Contato</a>
         </div>
     </header>
 
@@ -39,28 +40,72 @@
         </div>
     </section>
 
+    <section id="projetos">
+        <div class="container">
+            <h2>Projetos Recentes</h2>
+            <div class="projeto">
+                <h3>Sistema de Gerenciamento de Tarefas</h3>
+                <p>Um sistema web desenvolvido em PHP e MySQL para gerenciar tarefas diárias.</p>
+            </div>
+            <div class="projeto">
+                <h3>Portfólio Pessoal</h3>
+                <p>Este site que você está vendo, desenvolvido com HTML, CSS e JavaScript.</p>
+            </div>
+        </div>
+    </section>
+
     <section id="contato">
         <div class="container">
             <h2>Entre em Contato</h2>
             <p>Estou animado para contribuir em projetos reais e aprender com profissionais experientes. Vamos conversar!</p>
-            <form id="contact-form">
+            <form id="contact-form" method="post">
                 <label for="name">Nome:</label>
                 <input type="text" id="name" name="name" required>
-
+            
                 <label for="email">E-mail:</label>
                 <input type="email" id="email" name="email" required>
-
+            
                 <label for="message">Mensagem:</label>
                 <textarea id="message" name="message" rows="5" required></textarea>
-
+            
                 <button type="submit">Enviar</button>
             </form>
         </div>
     </section>
+    <!-- Firebase e Scripts -->
+    <script type="module">
+        import { db } from './firebase.js';
+        import { collection, addDoc } from "firebase/firestore";
 
+        const form = document.getElementById('contact-form');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const nome = form.name.value;
+            const email = form.email.value;
+            const mensagem = form.message.value;
+
+            try {
+                // Salva os dados no Firestore
+                await addDoc(collection(db, 'contatos'), {
+                    nome: nome,
+                    email: email,
+                    mensagem: mensagem,
+                    timestamp: new Date()
+                });
+
+                alert('Mensagem enviada com sucesso!');
+                form.reset(); // Limpa o formulário
+            } catch (error) {
+                console.error('Erro ao enviar mensagem: ', error);
+                alert('Erro ao enviar mensagem. Tente novamente.');
+            }
+        });
+    </script>
     <footer>
         <div class="container">
-            <p>&copy; 2025 Alvaro Paiva. Todos os direitos reservados.</p>
+            <p>&copy; 2023 Alvaro Paiva. Todos os direitos reservados.</p>
         </div>
     </footer>
     <script src="scripts.js"></script>
