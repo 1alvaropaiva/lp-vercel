@@ -1,0 +1,32 @@
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+        }
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 24px;
+            color: #333 !important;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: white;
+            padding: 100px 0;
+        }
+        
+        .container {
+            text-align: center;
+        }
+        
+        .btn-custom {
+            background-color: black;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+        }
+        
+        .contact-section {
+            background-color: gray;
+            padding: 50px 0;
+        }
+   
