@@ -1,4 +1,5 @@
         body {
+
             font-family: 'Arial', sans-serif;
             background-color: #f8f9fa;
         }
@@ -23,10 +24,16 @@
             color: white;
             padding: 12px 30px;
             border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .btn-custom:hover {
+            background-color: gray;
         }
         
-        .contact-section {
+        .contato-section {
             background-color: gray;
             padding: 50px 0;
         }
-   
+        
+      
