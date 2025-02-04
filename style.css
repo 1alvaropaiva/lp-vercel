@@ -61,16 +61,19 @@ body {
 }
 
 /* css responsivo aq */
-
+/* zap medio */
 @media only screen and (min-width: 768px) and (max-width: 991px){
     .carousel-caption{
-        bottom: 370px;
+        bottom: 125px;
     }
     .carousel-caption p {
         width: 100%;
     }
+    .carousel-caption h5 {
+        font-size: 35px;
+    }
 }
-
+/* zap pequeno */
 @media only screen and (max-width: 767px){
     .navbar-nav {
         text-align: center;
@@ -79,7 +82,7 @@ body {
         bottom: 125px;
     }
     .carousel-caption h5 {
-        font-size: 17px;
+        font-size: 23px;
     }
     .carousel-caption a {
         padding: 10px 15px;
@@ -87,6 +90,6 @@ body {
     .carousel-caption p {
         width: 100%;
         line-height: 1.6;
-        font-size: 12px;
+        font-size: 17px;
     }
 }
